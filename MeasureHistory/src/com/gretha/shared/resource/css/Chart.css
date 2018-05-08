@@ -1,0 +1,500 @@
+
+
+/*******************************************************************************
+ *                                                                             *
+ *  Result Chart                                                               *
+ *                                                                             *
+ ******************************************************************************/
+
+ #resultchart .chart-series-line {    
+    /*-fx-stroke-width: 5.0px;
+ 	 * 
+ 	 */
+     
+   	/*
+   	 * -fx-effect: null;
+   	 */
+}
+
+/* Linien */
+#resultchart .default-color0.chart-series-line {
+	-fx-stroke: black;
+	-fx-stroke-width: 0.5px;
+}
+#resultchart .default-color1.chart-series-line {
+	-fx-stroke: red;
+	-fx-stroke-width: 2.0px;
+}
+#resultchart .default-color2.chart-series-line {
+	-fx-stroke: red;
+	-fx-stroke-width: 2.0px;
+}
+#resultchart .default-color3.chart-series-line {
+	-fx-stroke: cyan;
+	-fx-stroke-width: 1.5px;
+}
+#resultchart .default-color4.chart-series-line {
+	-fx-stroke: magenta;	
+	-fx-stroke-width: 1.5px;
+	-fx-stroke-dash-array: 10.0 8.0;	
+}
+#resultchart .default-color5.chart-series-line {
+	-fx-stroke: blue;	
+	-fx-stroke-width: 1.5px;	
+}
+
+ /* Legende */
+#resultchart .default-color0.chart-line-symbol {
+	-fx-background-color: black, white;
+}
+#resultchart .default-color1.chart-line-symbol {
+	-fx-background-color: red, white;
+}
+#resultchart .default-color2.chart-line-symbol {
+	-fx-background-color: red, white;
+}
+#resultchart .default-color3.chart-line-symbol {
+	-fx-background-color: cyan, white;
+}
+#resultchart .default-color4.chart-line-symbol {
+	-fx-background-color: magenta, white;
+}
+#resultchart .default-color5.chart-line-symbol {
+	-fx-background-color: blue, white;
+}
+ 
+/* Punkte */
+#resultchart .chart-content .plot-content .default-color0{	
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+#resultchart .chart-content .plot-content .default-color0:hover {
+	-fx-background-color: black, black;	
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+#resultchart .chart-content .plot-content .default-color1{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;		
+}
+#resultchart .chart-content .plot-content .default-color2{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;	
+}
+#resultchart .chart-content .plot-content .default-color3{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;	
+}
+#resultchart .chart-content .plot-content .default-color4{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;	
+}
+#resultchart .chart-content .plot-content .default-color5{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;	
+}
+#resultchart .chart-content .plot-content .default-color6{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;	
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * SPC Chart                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+/*Füllfarbe*/
+/*Xquer*/
+#spcchart .default-color0.chart-series-area-fill { /* FX theme stylesheet */
+-fx-fill: magenta;
+}
+/*USG*/
+#spcchart .default-color1.chart-series-area-fill { /* FX theme stylesheet */
+-fx-fill: red;
+}
+/*OSG*/
+#spcchart .default-color2.chart-series-area-fill { /* FX theme stylesheet */
+-fx-fill: red;
+}
+/*Xquer-3s*/
+#spcchart .default-color3.chart-series-area-fill { /* FX theme stylesheet */
+-fx-fill: orange;
+}
+/*Xquer+3s*/
+#spcchart .default-color4.chart-series-area-fill { /* FX theme stylesheet */
+-fx-fill: orange;
+}
+/*Klassen*/
+#spcchart .default-color5.chart-series-area-fill { /* FX theme stylesheet */
+-fx-fill: #57b75715;
+}
+/*Gauss*/
+#spcchart .default-color6.chart-series-area-fill { /* FX theme stylesheet */
+-fx-fill: #1800ff08;
+}
+
+#spcchart .chart-series-area-fill { /* FX theme stylesheet */
+-fx-stroke: transparent;
+}
+
+/*Legende*/
+/*Xquer*/
+#spcchart .default-color0.chart-area-symbol {
+	-fx-background-color: magenta, white;	
+}
+/*USG*/
+#spcchart .default-color1.chart-area-symbol {
+	-fx-background-color: red, white;
+}
+/*OSG*/
+#spcchart .default-color2.chart-area-symbol {
+	-fx-background-color: red, white;
+}
+/*Xquer-3s*/
+#spcchart .default-color3.chart-area-symbol {
+	-fx-background-color: orange, white;
+}
+/*Xquer+3s*/
+#spcchart .default-color4.chart-area-symbol {
+	-fx-background-color: orange, white;
+}
+/*Klassen*/
+#spcchart .default-color5.chart-area-symbol {
+	-fx-background-color: #57b757, white;
+}
+/*Gauss*/
+#spcchart .default-color6.chart-area-symbol {
+	-fx-background-color: #1800ff, white;
+}
+
+/*Punkte */
+#spcchart .chart-content .plot-content .default-color0{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;		
+}
+#spcchart .chart-content .plot-content .default-color1{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;		
+}
+#spcchart .chart-content .plot-content .default-color2{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;		
+}
+#spcchart .chart-content .plot-content .default-color3{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;		
+}
+#spcchart .chart-content .plot-content .default-color4{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;		
+}
+
+#spcchart .chart-content .plot-content .default-color5{	
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+#spcchart .chart-content .plot-content .default-color5:hover {
+	-fx-background-color: #57b757, #57b757;	
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+#spcchart .chart-content .plot-content .default-color6{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;		
+}
+
+/*Linienfarbe*/
+/*Xquer*/
+#spcchart .default-color0.chart-series-area-line {
+	-fx-stroke: magenta;
+	-fx-stroke-width: 1.5px;
+	-fx-stroke-dash-array: 10.0 8.0;
+}
+/*USG*/
+#spcchart .default-color1.chart-series-area-line {
+	-fx-stroke: red;
+	-fx-stroke-width: 2.0px;
+}
+/*OSG*/
+#spcchart .default-color2.chart-series-area-line {
+	-fx-stroke: red;
+	-fx-stroke-width: 2.0px;
+}
+/*Xquer-3s*/
+#spcchart .default-color3.chart-series-area-line {
+	-fx-stroke: orange;
+	-fx-stroke-width: 1.5px;
+	-fx-stroke-dash-array: 10.0 8.0;
+}
+/*Xquer+3s*/
+#spcchart .default-color4.chart-series-area-line {
+	-fx-stroke: orange;	
+	-fx-stroke-width: 1.5px;	
+	-fx-stroke-dash-array: 10.0 8.0;
+}
+/*Klassen*/
+#spcchart .default-color5.chart-series-area-line {
+	-fx-stroke: #57b757;	
+	-fx-stroke-width: 1.0px;	
+}
+/*Gauss*/
+#spcchart .default-color6.chart-series-area-line {
+	-fx-stroke: #1800ff;	
+	-fx-stroke-width: 1.0px;	
+}
+
+/*******************************************************************************
+ *                                                                             *
+ *  Time Chart                                                               *
+ *                                                                             *
+ ******************************************************************************/
+
+ #timechart .chart-series-line {    
+    /*-fx-stroke-width: 5.0px;
+ 	 * 
+ 	 */
+     
+   	/*
+   	 * -fx-effect: null;
+   	 */
+}
+
+/* Linien */
+#timechart .default-color0.chart-series-line {
+	-fx-stroke: black;
+	-fx-stroke-width: 0.5px;
+}
+
+#timechart .default-color1.chart-series-line {
+	-fx-stroke: magenta;	
+	-fx-stroke-width: 1.5px;
+	-fx-stroke-dash-array: 10.0 8.0;	
+}
+
+ /* Legende */
+#timechart .default-color0.chart-line-symbol {
+	-fx-background-color: black, white;
+}
+#timechart .default-color1.chart-line-symbol {
+	-fx-background-color: magenta, white;
+}
+
+ 
+/* Punkte */
+#timechart .chart-content .plot-content .default-color0{	
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+#timechart .chart-content .plot-content .default-color0:hover {
+	-fx-background-color: black, black;	
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+#timechart .chart-content .plot-content .default-color1{
+	-fx-background-color: transparent, transparent;
+	-fx-background-insets: 0.0, 0.0;
+	-fx-background-radius: 0.0px;
+	-fx-padding:  0.0px;	
+}
+
+readonly-checkbox *.text:disabled {
+    -fx-opacity: 1.0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ *  Adhoc Chart                                                               *
+ *                                                                             *
+ ******************************************************************************/
+ 
+ /* Y-Achse Legende */
+ #adhocchart0yAxle .axis-label {
+ 	-fx-text-fill: red;
+ 	-fx-font-weight: null;
+ }
+
+/* Linien */
+#adhocchart0 .default-color0.chart-series-line {
+	-fx-stroke: red;
+	-fx-stroke-width: 0.5px;
+}
+
+ /* Legende */
+#adhocchart0 .default-color0.chart-line-symbol {
+	-fx-background-color: red, white;
+}
+ 
+/* Punkte */
+#adhocchart0 .chart-content .plot-content .default-color0{		
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+#adhocchart0 .chart-content .plot-content .default-color0:hover {
+	-fx-background-color: red, red;	
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+ /* Y-Achse Legende */
+ #adhocchart1yAxle .axis-label {
+ 	-fx-text-fill: blue;
+ 	-fx-font-weight: null;
+ }
+ 
+/* Linien */
+#adhocchart1 .default-color0.chart-series-line {
+	-fx-stroke: blue;
+	-fx-stroke-width: 0.5px;
+}
+
+ /* Legende */
+#adhocchart1 .default-color0.chart-line-symbol {
+	-fx-background-color: blue, white;
+}
+ 
+/* Punkte */
+#adhocchart1 .chart-content .plot-content .default-color0{		
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+#adhocchart1 .chart-content .plot-content .default-color0:hover {
+	-fx-background-color: blue, blue;	
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+ /* Y-Achse Legende */
+ #adhocchart2yAxle .axis-label {
+ 	-fx-text-fill: green;
+ 	-fx-font-weight: null;
+ }
+
+/* Linien */
+#adhocchart2 .default-color0.chart-series-line {
+	-fx-stroke: green;
+	-fx-stroke-width: 0.5px;
+}
+
+ /* Legende */
+#adhocchart2 .default-color0.chart-line-symbol {
+	-fx-background-color: green, white;
+}
+ 
+/* Punkte */
+#adhocchart2 .chart-content .plot-content .default-color0{		
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+#adhocchart2 .chart-content .plot-content .default-color0:hover {
+	-fx-background-color: green, green;	
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+ /* Y-Achse Legende */
+ #adhocchart3yAxle .axis-label {
+ 	-fx-text-fill: darkmagenta;
+ 	-fx-font-weight: null;
+ }
+
+/* Linien */
+#adhocchart3 .default-color0.chart-series-line {
+	-fx-stroke: darkmagenta;
+	-fx-stroke-width: 0.5px;
+}
+
+ /* Legende */
+#adhocchart3 .default-color0.chart-line-symbol {
+	-fx-background-color: darkmagenta, white;
+}
+ 
+/* Punkte */
+#adhocchart3 .chart-content .plot-content .default-color0{		
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+#adhocchart3 .chart-content .plot-content .default-color0:hover {
+	-fx-background-color: darkmagenta, darkmagenta;	
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+ /* Y-Achse Legende */
+ #adhocchart4yAxle .axis-label {
+ 	-fx-text-fill: brown;
+ 	-fx-font-weight: null;
+ }
+
+/* Linien */
+#adhocchart4 .default-color0.chart-series-line {
+	-fx-stroke: brown;
+	-fx-stroke-width: 0.5px;
+}
+
+ /* Legende */
+#adhocchart4 .default-color0.chart-line-symbol {
+	-fx-background-color: brown, white;
+}
+ 
+/* Punkte */
+#adhocchart4 .chart-content .plot-content .default-color0{		
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}
+
+#adhocchart4 .chart-content .plot-content .default-color0:hover {
+	-fx-background-color: brown, brown;	
+	-fx-background-insets: 0.0, 2.0;
+	-fx-background-radius: 5.0px;
+	-fx-padding:  4.0px;	
+}

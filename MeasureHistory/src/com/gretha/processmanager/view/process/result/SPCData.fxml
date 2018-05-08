@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gretha.processmanager.view.process.result.SPCDataController">
+   <center>
+      <GridPane>
+         <children>
+            <Label text="Tm:" GridPane.rowIndex="1" />
+            <Label text="USG:" GridPane.rowIndex="2" />
+            <Label text="OSG:" GridPane.rowIndex="3" />
+            <Label text="T:" GridPane.rowIndex="4" />
+            <Label fx:id="lblTolMitte" text="+/- 9999,9999" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="lblUSG" text="+/- 9999,9999" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="lblOSG" text="+/- 9999,9999" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="lblTol" text="+/- 9999,9999" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Xmin:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Xmax:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="R:" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label fx:id="lblXmin" alignment="CENTER_RIGHT" text="+/- 9999,9999" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label fx:id="lblXmax" alignment="CENTER_RIGHT" text="+/- 9999,9999" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label fx:id="lblRange" alignment="CENTER_RIGHT" text="+/- 9999,9999" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label text="n&lt;T&gt;:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label fx:id="lblNinTol" alignment="CENTER_RIGHT" text="1000" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Label text="Xquer-3s:" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Label text="Xquer+3s:" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <Label fx:id="lblXquerMinusSigma" text="+/- 9999,9999" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Label fx:id="lblXquerPlusSigma" text="+/- 9999,9999" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <Label text="Xquer:" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Label fx:id="lblXquer" text="+/- 9999,9999" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Line endX="120.0" rotate="90.0" strokeWidth="0.5" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="6" />
+            <Line endX="120.0" rotate="90.0" strokeWidth="0.5" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.rowSpan="6" />
+            <Label text="n&gt;OSG:" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Label text="n&lt;USG:" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Label text="6s:" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+            <Label text="s:" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Label fx:id="lblNoutOSG" alignment="CENTER_RIGHT" text="1000" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Label fx:id="lblNoutUSG" alignment="CENTER_RIGHT" text="1000" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <Label fx:id="lblSigma" text="+/- 9999,9999" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Label fx:id="lblSechsSigma" text="+/- 9999,9999" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+            <Label text="Cp:" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Line endX="120.0" rotate="90.0" strokeWidth="0.5" GridPane.columnIndex="8" GridPane.rowIndex="1" GridPane.rowSpan="6" />
+            <Label fx:id="lblCp" text="+/- 99,99" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+            <Label text="Cpk:" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+            <Label fx:id="lblCpk" text="+/- 99,99" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+            <Label text="Zeichnungswerte" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Gemessene Werte" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Statistische Werte" GridPane.columnIndex="6" GridPane.columnSpan="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="KSG:" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+            <Label fx:id="lblKSG" text="+/- 9999,9999" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+            <ImageView fx:id="ivCpkState" fitHeight="67.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.rowSpan="2" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="@../../../../shared/resource/icons/smiley_green_225.png" />
+               </image>
+            </ImageView>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="45.0" minWidth="45.0" prefWidth="45.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+   </center>
+</BorderPane>

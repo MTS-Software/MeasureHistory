@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gretha.processmanager.view.config.root.OverviewButtonsController">
+   <center>
+      <BorderPane BorderPane.alignment="CENTER">
+         <top>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" spacing="10.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label fx:id="lblRefreshText" text="Daten zuletzt aktualisiert am" />
+                              <Label fx:id="refreshDateLabel" text="Label" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="refreshButton" maxWidth="44.0" mnemonicParsing="false">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../shared/resource/icons/refresh_32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Aktualisieren (F5)" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0" AnchorPane.leftAnchor="0.0">
+                     <children>
+                      <Button fx:id="newButton" maxWidth="75.0" mnemonicParsing="false" text="Neu">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../shared/resource/icons/new24.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Neuen Eintrag erstellen" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="editButton" mnemonicParsing="false" text="Bearbeiten">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../shared/resource/icons/edit24.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Selektierte Zeile bearbeiten" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="deleteButton" mnemonicParsing="false" text="Entfernen">
+                           <tooltip>
+                              <Tooltip text="Selektierte Zeile löschen" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../shared/resource/icons/delete24.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <TextField fx:id="searchField" prefWidth="270.0" promptText="Suche..." />
+                              <Button fx:id="clearButton" maxHeight="25.0" maxWidth="24.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../shared/resource/icons/clear24.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label fx:id="foundValuesLabel" text="x Übereinstimmungen" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

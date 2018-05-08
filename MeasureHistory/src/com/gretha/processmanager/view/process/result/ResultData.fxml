@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gretha.processmanager.view.process.result.ResultDataController">
+   <center>
+      <GridPane>
+         <children>
+            <Label text="Minimum:" GridPane.rowIndex="1" />
+            <Label text="Maximum:" GridPane.rowIndex="2" />
+            <Label text="Range:" GridPane.rowIndex="3" />
+            <Label text="Mittwelwert:" GridPane.rowIndex="4" />
+            <Label fx:id="lblMin" text="+/- 9999,9999 usr" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="lblMax" text="+/- 9999,9999 usr" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="lblRange" text="+/- 9999,9999 usr" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="lblMittelwert" text="+/- 9999,9999 usr" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="in Ordnung:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="nicht in Ordnung:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="unbewertet:" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label fx:id="lblOk" alignment="CENTER_RIGHT" text="995 Stk." GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label fx:id="lblNok" alignment="CENTER_RIGHT" text="3 Stk." GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label fx:id="lblUnbewertet" alignment="CENTER_RIGHT" text="25 Stk." GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label text="Gesamt:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label fx:id="lblGesamt" alignment="CENTER_RIGHT" text="10000 Stk." GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Label fx:id="lblOkProzent" alignment="CENTER_RIGHT" text="(99,5 %)" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label fx:id="lblNokProzent" alignment="CENTER_RIGHT" text="(0,3 %)" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Label fx:id="lblUnbewertetProzent" alignment="CENTER_RIGHT" text="(0,2 %)" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Label fx:id="lblGesamtProzent" alignment="CENTER_RIGHT" text="(100,0 %)" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Label text="Prozessmitte-Sollwert:" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Label text="Abweichung (Ist-Soll):" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Label fx:id="lblProzessSollwert" text="+/- 9999,9999 usr" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+            <Label fx:id="lblProzessAbweichung" text="+/- 9999,9999 usr" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+            <Label text="Prozessmitte-Istwert:" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Label fx:id="lblProzessIstwert" text="+/- 9999,9999 usr" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Line endX="80.0" rotate="90.0" strokeWidth="0.5" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="4" />
+            <Line endX="80.0" rotate="90.0" strokeWidth="0.5" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.rowSpan="4" />
+            <Label text="Gemessene Werte" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Statistische Werte" GridPane.columnIndex="3" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="95.0" minWidth="95.0" prefWidth="95.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="55.0" minWidth="55.0" prefWidth="55.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="95.0" minWidth="95.0" prefWidth="95.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+   </center>
+</BorderPane>

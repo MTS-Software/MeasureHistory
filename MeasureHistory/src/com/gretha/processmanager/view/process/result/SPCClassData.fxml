@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gretha.processmanager.view.process.result.SPCClassDataController">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <top>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Button minWidth="120.0" mnemonicParsing="false" onAction="#exportTo" text="Exportieren">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../shared/resource/icons/save_disk_512.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0">
+                     <children>
+                        <TextField fx:id="searchField" prefWidth="270.0" promptText="Suche..." />
+                        <Button fx:id="clearButton" maxHeight="25.0" maxWidth="24.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../shared/resource/icons/clear24.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="foundValuesLabel" text="x Übereinstimmungen" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </top>
+         <bottom>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handleClose" text="Abbrechen" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="63.0" layoutY="10.0" prefHeight="17.0" prefWidth="293.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Label fx:id="anzahlKlassenLabel" text="Anzahl Klassen:" />
+                     </children></HBox>
+               </children>
+            </AnchorPane>
+         </bottom>
+         <center>
+            <TableView fx:id="dataTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="idColumn" editable="false" minWidth="75.0" prefWidth="75.0" text="Klasse" />
+                <TableColumn fx:id="minColumn" editable="false" minWidth="125.0" prefWidth="125.0" text="Klasse Minimum" />
+                  <TableColumn fx:id="maxColumn" editable="false" minWidth="125.0" prefWidth="125.0" text="Klasse Maximum" />
+                  <TableColumn fx:id="stueckAbsolutColumn" editable="false" minWidth="175.0" prefWidth="175.0" text="absolute Häufigkeit [Stk.]" />
+                  <TableColumn fx:id="stueckRelativColumn" editable="false" minWidth="175.0" prefWidth="175.0" text="relative Häufigkeit [%]" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

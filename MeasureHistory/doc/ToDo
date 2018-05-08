@@ -1,0 +1,56 @@
+----------------------- Diagramm ------------------------
+
+----------------------- Datenbank -----------------------
+
+------------------- Prozesseinstellungen ----------------
+
+------------------------- Filter ------------------------	
+
+---------------- Allgemein / Optimierungen --------------
+
+-	Im RooLayout neben dem Treeview, bei Anzeige der Overviews wäre es cool wenn zwischen den Stationen einen horizontalen Seperator
+	oder ein Label, Harmonica, etc. eingefügt wird zu visuellen Trennung der Prozesse in Abhängigkeit der Stationen
+	
+-	NIO-Analyse im ProcessManager inkl. Filterfunktion?
+
+-	Fadenkreuz für adhocChart
+
+-	Port für Programmchecker evtl. in Applicaton Properties hinzufügen (Achtung reihenfolge bei Programmstart beachten, zuerst port laden und dann Programmchecker)
+
+-	Diagrammansicht (Linien welche eingeblendet werden oder nicht, sowie skalierung) pro Prozess speichern und beim öffnen laden!! (Reset to Default funktion aber ermöglichen)
+
+-	Legendendarstellung wenn Linien ausgeblendet werden anders darstellen...
+	
+----------------------- PLCManager -----------------------
+
+------------------------- Logger -------------------------
+
+------------------------- Testen -------------------------
+
+------------------- Fehler / Unsauberkeiten -------------------
+
+-	In Konfiguration Prozesse wird rechts die CPU beim anklicken eines Prozesses nicht dargestellt
+
+-	Adhoc Tabelle --> Sortierung über Spalten funktioniert nicht richtig --> Sortierung prinzipiell haut hin aber...
+	--> Bei ResultTable geht nach dem Sortieren (wenn man auf den Spaltenkopf klickt) wieder alles in die Ursprungsform zurück,
+		sprich aufsteigend, absteigend und danach nichts mehr also default. Bei AdhocTable oder PLCDiagnose (PLCManager) oder NOKList im RootLayout
+		bleibt die Ansicht bei der letzten Sortierung die man beim Kicken hatte...
+		
+-	Thread für auto Aktualisierung --> Wenn Programm minimiert funktioniert die aktualisierung nicht mehr (sporadisch?!?!)
+	--> Thread (AutoRefreshData) kackt ab wenn man im ProcessManager im TreeView herumklickt --> lässt sich nachstellen
+	--> Es kommt auch ab und zu eine SQL Exception, dass trotz geschlossener Verbindung etwas geladen werden möchte?!
+		--> hier wurde bei allen JDBCDAO das CloseConnection entfernt --> muss gecheckt werden ob trotzdem noch passiert!!
+	--> Thread interrupten macht auch ein Problem wenn man einen neuen Prozess anlegt -> es werden exceptions geworfen...
+	--> Threads generell überarbeiten (ProcessManager und PLCManager)
+	
+-	Thread implementieren, der z.B.: den Mauszeiger, Text, etc. bei der Visu ändert/ausgibt
+	--> Versuch mit Thread gestartet jedoch freezt die GUI (TreeViewController.java - refreshVisuThread)
+	--> Threads generell überarbeiten (ProcessManager und PLCManager)	
+			
+-	Date/Time Picker im Filter zeigt falsche Kalenderwoche an
+ 	--> Kalenderwoche kann leider nicht ausgeblendet werden (beim Standard DatePicker ist dies möglich, jedoch kann dieser
+ 		keine Uhrzeit anzeigen, sprich DateTime - lt. Homepage unterstützt dieser aber auch DateTime
+ 		https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/date-picker.htm#CCHHJBEA
+ 		
+ 
+	

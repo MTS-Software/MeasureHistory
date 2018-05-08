@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane onKeyPressed="#handleRefresh" prefHeight="790.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gretha.processmanager.view.root.LayoutController">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="Datei">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#handleRestart" text="Neustart">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/restart_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem mnemonicParsing="false" onAction="#handleMinimize" text="Minimieren">
+							<graphic>
+								<ImageView fx:id="ivBeenden" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/minimize_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Beenden">
+                     <graphic>
+                        <ImageView fx:id="ivBeenden1" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../shared/resource/icons/shutdown_24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Benutzer">
+					<items>
+						<MenuItem fx:id="miLogin" mnemonicParsing="false" onAction="#handleLogin" text="Login">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/login_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem fx:id="miLogout" mnemonicParsing="false" onAction="#handleLogout" text="Logout">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/logout_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+					</items>
+				</Menu>
+				<Menu fx:id="mBearbeiten" mnemonicParsing="false" text="Bearbeiten">
+					<items>
+						<Menu fx:id="miRefresh" mnemonicParsing="false" text="Aktualisierung">
+							<items>
+								<CheckMenuItem fx:id="cbAutoRefresh" mnemonicParsing="false" text="Automatisch" />
+								<MenuItem mnemonicParsing="false" onAction="#handleMenuRefresh" text="Aktualisieren" />
+							</items>
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/refresh_48.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Konfiguration">
+							<items>
+								<MenuItem mnemonicParsing="false" onAction="#handleProcesses" text="Prozesse">
+									<graphic>
+										<ImageView pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@../../../shared/resource/icons/process24.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+								<MenuItem mnemonicParsing="false" onAction="#handleUnits" text="Einheiten">
+									<graphic>
+										<ImageView pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@../../../shared/resource/icons/ruler24.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+								<MenuItem mnemonicParsing="false" onAction="#handlePLCs" text="Steuerungen">
+									<graphic>
+										<ImageView pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@../../../shared/resource/icons/plc24.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+								<MenuItem mnemonicParsing="false" onAction="#handlePLCTriggers" text="Trigger">
+									<graphic>
+										<ImageView pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@../../../shared/resource/icons/trigger24.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleShiftSettings" text="Schichtzeiten">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../shared/resource/icons/shiftsettings24.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+							</items>
+							<graphic>
+								<ImageView pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/config24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Menu>
+						<MenuItem mnemonicParsing="false" onAction="#handleSettings" text="Einstellungen">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/settings_256.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+					</items>
+				</Menu>
+            <Menu mnemonicParsing="false" text="Extras">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openJavaWebbrowser" text="Java Webbrowser">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../shared/resource/icons/webbrowser24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="miLicenceGenerator" mnemonicParsing="false" onAction="#handleLicenseGenerator" text="Lizenz Generator">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../shared/resource/icons/license_24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+				<Menu mnemonicParsing="false" text="Hilfe">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#handleLicenseInfo" text="Lizenz">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/license_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem mnemonicParsing="false" onAction="#handleAbout" text="Info">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/info_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+   <center>
+      <BorderPane BorderPane.alignment="CENTER">
+         <top>
+            <AnchorPane>
+               <children>
+                  <HBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextField fx:id="searchField" prefWidth="250.0" promptText="Suche..." />
+                        <Button fx:id="clearButton" maxHeight="25.0" maxWidth="24.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../shared/resource/icons/clear24.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="lblFoundValue" text="x Übereinstimmungen" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="10.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label fx:id="lblRefreshText" text="Daten zuletzt aktualisiert am" />
+                              <Label fx:id="lblRefreshDate" text="Label" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnRefresh" maxWidth="44.0" mnemonicParsing="false" onAction="#handleButtonRefresh">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../shared/resource/icons/refresh_32.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Aktualisieren (F5)" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <SplitPane fx:id="spData" dividerPositions="1.0" orientation="VERTICAL" BorderPane.alignment="CENTER">
+              <items>
+                  <BorderPane fx:id="bpTreeView" />
+                  <Accordion fx:id="resultAccordion">
+                    <panes>
+                      <TitledPane fx:id="resultTitledPane" animated="false" contentDisplay="RIGHT" graphicTextGap="10.0" text="Letzten Ergebnisse">
+                           <content>
+                              <TableView fx:id="tblResult" tableMenuButtonVisible="true">
+                                 <columns>
+                                    <TableColumn fx:id="colNr" minWidth="40.0" prefWidth="40.0" text="Nr." />
+                                    <TableColumn fx:id="colStation" minWidth="70.0" prefWidth="70.0" text="Station" />
+                                    <TableColumn fx:id="colName" minWidth="180.0" prefWidth="180.0" text="Name" />
+                                    <TableColumn fx:id="colValue" minWidth="115.0" prefWidth="115.0" text="Messwert" />
+                                    <TableColumn fx:id="colLoLim" minWidth="115.0" prefWidth="115.0" text="Untergrenze" />
+                                    <TableColumn fx:id="colUpLim" minWidth="115.0" prefWidth="115.0" text="Obergrenze" />
+                                    <TableColumn fx:id="colState" minWidth="115.0" prefWidth="115.0" text="Status" />
+                                    <TableColumn fx:id="colSerial" minWidth="120.0" prefWidth="120.0" text="Seriennummer" />
+                                    <TableColumn fx:id="colTypNr" minWidth="115.0" prefWidth="115.0" text="Typen-Nummer" />
+                                    <TableColumn fx:id="colRemark" minWidth="110.0" prefWidth="110.0" text="Bemerkung" />
+                                    <TableColumn fx:id="colTimestamp" minWidth="125.0" prefWidth="125.0" text="Zeitpunkt" />
+                                 </columns>
+                              </TableView>
+                           </content>
+                           <graphic>
+                              <Label fx:id="lblQueryExecTime" contentDisplay="CENTER" text="(Daten zuletzt aktualisiert am Montag, 11. September 2017 um 08:00:00 -&gt; QUERY executing time: 00:00:00.000)" textFill="GREY" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TitledPane>
+                    </panes>
+                  </Accordion>
+              </items>
+            </SplitPane>
+         </center>
+      </BorderPane>
+   </center>
+   <bottom>
+		<VBox BorderPane.alignment="CENTER">
+			<children>
+            <Separator />
+				<BorderPane maxHeight="20.0" minHeight="20.0" prefHeight="20.0">
+					<right>
+						<Label fx:id="labelRightStatus" maxWidth="-1.0" text="Right status" BorderPane.alignment="CENTER">
+							<font>
+								<Font size="11.0" fx:id="x4" />
+							</font>
+						</Label>
+					</right>
+					<left>
+						<Label fx:id="labelLeftStatus" maxWidth="-1.0" text="Left status" BorderPane.alignment="CENTER">
+							<font>
+								<Font size="11.0" fx:id="x3" />
+							</font>
+						</Label>
+					</left>
+					<padding>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</padding>
+					<center>
+						<Label fx:id="labelCenterStatus" text="Center status" textFill="GREY" BorderPane.alignment="CENTER" />
+					</center>
+				</BorderPane>
+			</children>
+		</VBox>
+   </bottom>
+</BorderPane>

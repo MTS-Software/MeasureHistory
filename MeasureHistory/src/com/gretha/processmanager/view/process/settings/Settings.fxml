@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gretha.processmanager.view.process.settings.SettingsController">
+   <children>
+      <GridPane vgap="2.0">
+         <children>
+            <Label text="Prozesseinstellungen" underline="true" />
+            <Label text="Station:" GridPane.rowIndex="1" />
+            <TextField fx:id="valueStation" maxWidth="320.0" promptText="max. 45 Zeichen" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Label text="Bezeichnung:" GridPane.rowIndex="2" />
+            <TextField fx:id="valueBezeichnung" maxWidth="320.0" promptText="max. 45 Zeichen" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Label text="Prozessmitte-Sollwert:" GridPane.rowIndex="3" />
+            <CheckBox fx:id="cbSetvalueUsed" mnemonicParsing="false" text="in Verwendung (bei nein wird die Toleranzmitte verwendet)" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <Label text="Prozessmitte-Sollwert:" GridPane.rowIndex="4" />
+            <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <StackPane fx:id="spSetvalue">
+                     <children>
+                        <TextField fx:id="valueSetvalue" maxWidth="90.0" promptText="999999,9999" />
+                     </children>
+                  </StackPane>
+                  <Label fx:id="lblUnit" text="[Einheit]" />
+               </children>
+            </HBox>
+            <Label text="Nachkommastellen:" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <ComboBox fx:id="cbDecpoints" promptText="0 - 4" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ComboBox>
+            <Label text="Einheit:" GridPane.rowIndex="6" />
+            <ComboBox fx:id="unitComboBox" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Steuerung:" GridPane.rowIndex="7" />
+            <ComboBox fx:id="plcComboBox" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Trigger:" GridPane.rowIndex="8" />
+            <ComboBox fx:id="triggerComboBox" minWidth="450.0" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="SPC Einstellungen" underline="true" GridPane.rowIndex="10" />
+            <Label text="Prozess nicht fähig bei Cpk &lt;" GridPane.rowIndex="11" />
+            <StackPane fx:id="spCpkLoLim1" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="11">
+               <children>
+                  <TextField fx:id="valueCpkLoLim1" maxWidth="90.0" />
+               </children>
+            </StackPane>
+            <Label text="Prozess bedingt fähig bei Cpk &gt;=" GridPane.rowIndex="12" />
+            <TextField fx:id="valueCpkLoLim1Vis" disable="true" maxWidth="90.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Label text="Prozess fähig bei Cpk &gt;=" GridPane.rowIndex="13" />
+            <StackPane fx:id="spCpkLoLim2" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="13">
+               <children>
+                  <TextField fx:id="valueCpkLoLim2" maxWidth="90.0" />
+               </children>
+            </StackPane>
+            <Label text="Anzahl an Klassen für Häufigkeit:" GridPane.rowIndex="14" />
+            <StackPane fx:id="spAnzahlSpcKlassen" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="14">
+               <children>
+                  <TextField fx:id="valueAnzahlSpcKlassen" maxWidth="90.0" promptText="1-200" />
+               </children>
+            </StackPane>
+            <Label text="Diagrammeinstellungen" underline="true" GridPane.rowIndex="16" />
+            <Label text="Mittelwert Stück:" GridPane.rowIndex="17" />
+            <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="17">
+               <children>
+                  <StackPane fx:id="spAnzahlAvg">
+                     <children>
+                        <TextField fx:id="valueAnzahlAvg" maxWidth="90.0" promptText="0-50" />
+                     </children>
+                  </StackPane>
+                  <Label text="[Stk.]" />
+               </children>
+            </HBox>
+            <Button fx:id="unitOverviewButton" maxWidth="30.0" mnemonicParsing="false" text="..." GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Button fx:id="plcOverviewButton" maxWidth="30.0" mnemonicParsing="false" text="..." GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Button fx:id="triggerOverviewButton" maxWidth="30.0" mnemonicParsing="false" text="..." GridPane.columnIndex="2" GridPane.rowIndex="8" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="180.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="260.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="100.0" />
+         </columnConstraints>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <HBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <opaqueInsets>
+            <Insets left="10.0" />
+         </opaqueInsets>
+         <children>
+            <Button fx:id="btnOK" defaultButton="true" mnemonicParsing="false" onAction="#handleOK" prefWidth="125.0" text="OK" />
+            <Button fx:id="btnAbbrechen" mnemonicParsing="false" onAction="#handleClose" prefWidth="125.0" text="Abbrechen" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

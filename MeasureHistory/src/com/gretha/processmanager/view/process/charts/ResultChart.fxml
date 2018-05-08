@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gretha.processmanager.view.process.charts.ResultChartController">
+	<center>
+		<LineChart fx:id="chart" createSymbols="false" horizontalZeroLineVisible="false" style="-fx-background-color: white;" verticalZeroLineVisible="false" BorderPane.alignment="CENTER">
+			<xAxis>
+				<NumberAxis fx:id="chartxAxis" autoRanging="false" label="Teile" lowerBound="1.0" minorTickCount="100" minorTickVisible="false" side="BOTTOM" tickUnit="0.0" />
+			</xAxis>
+			<yAxis>
+				<NumberAxis fx:id="chartyAxis" minorTickVisible="false" side="LEFT" />
+			</yAxis>
+			<BorderPane.margin>
+				<Insets />
+			</BorderPane.margin>
+			<opaqueInsets>
+				<Insets />
+			</opaqueInsets>
+		</LineChart>
+	</center>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>

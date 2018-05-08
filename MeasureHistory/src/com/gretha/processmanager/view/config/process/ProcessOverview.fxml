@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minWidth="1150.0" onKeyPressed="#handleRefresh" prefHeight="810.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gretha.processmanager.view.config.process.ProcessOverviewController">
+   <children>
+      <VBox spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <fx:include fx:id="overviewButtons" source="../root/OverviewButtons.fxml" />
+            <SplitPane dividerPositions="0.5" VBox.vgrow="ALWAYS">
+              <items>
+                <AnchorPane maxWidth="548.0">
+                     <children>
+                        <TableView fx:id="dataTable" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="idColumn" minWidth="45.0" prefWidth="45.0" text="Id" />
+                            <TableColumn fx:id="stationColumn" minWidth="70.0" prefWidth="70.0" text="Station" />
+                              <TableColumn fx:id="nameColumn" minWidth="295.0" prefWidth="295.0" text="Name" />
+                              <TableColumn fx:id="timestampColumn" minWidth="125.0" prefWidth="125.0" text="Zeitstempel" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane>
+                     <children>
+                        <VBox layoutX="7.0" layoutY="14.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="Prozess">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../shared/resource/icons/process48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <GridPane vgap="2.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="83.0">
+                           <children>
+                              <Label text="Prozesseinstellungen" underline="true" />
+                              <Label text="Station:" GridPane.rowIndex="1" />
+                              <TextField fx:id="valueStation" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                              <Label text="Bezeichnung:" GridPane.rowIndex="2" />
+                              <TextField fx:id="valueBezeichnung" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                              <Label text="Prozessmitte-Sollwert:" GridPane.rowIndex="3" />
+                              <CheckBox fx:id="cbSetvalueUsed" mnemonicParsing="false" text="in Verwendung (bei nein wird die Toleranzmitte verwendet)" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                              <Label text="Prozessmitte-Sollwert:" GridPane.rowIndex="4" />
+                              <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <children>
+                                    <StackPane fx:id="spSetvalue">
+                                       <children>
+                                          <TextField fx:id="valueSetvalue" maxWidth="90.0" />
+                                       </children>
+                                    </StackPane>
+                                    <Label fx:id="lblUnit" text="[Einheit]" />
+                                 </children>
+                              </HBox>
+                              <Label text="Nachkommastellen:" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Einheit:" GridPane.rowIndex="6" />
+                              <Button fx:id="unitOverviewButton" maxWidth="30.0" mnemonicParsing="false" text="..." GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Label text="Steuerung:" GridPane.rowIndex="7" />
+                              <Button fx:id="plcOverviewButton" maxWidth="30.0" mnemonicParsing="false" text="..." GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <Label text="Trigger:" GridPane.rowIndex="8" GridPane.rowSpan="2" />
+                              <TextArea fx:id="valueTrigger" maxHeight="55.0" maxWidth="260.0" prefHeight="55.0" prefWidth="260.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="8" GridPane.rowSpan="2" />
+                              <Button fx:id="triggerOverviewButton" maxWidth="30.0" mnemonicParsing="false" text="..." GridPane.columnIndex="2" GridPane.rowIndex="8" GridPane.rowSpan="2" />
+                              <Label text="SPC Einstellungen" underline="true" GridPane.rowIndex="10" />
+                              <Label text="Prozess nicht fähig bei Cpk &lt;" GridPane.rowIndex="11" />
+                              <StackPane fx:id="spCpkLoLim1" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                 <children>
+                                    <TextField fx:id="valueCpkLoLim1" maxWidth="90.0" />
+                                 </children>
+                              </StackPane>
+                              <Label text="Prozess bedingt fähig bei Cpk &gt;=" GridPane.rowIndex="12" />
+                              <TextField fx:id="valueCpkLoLim1Vis" disable="true" maxWidth="90.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                              <Label text="Prozess fähig bei Cpk &gt;=" GridPane.rowIndex="13" />
+                              <StackPane fx:id="spCpkLoLim2" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                                 <children>
+                                    <TextField fx:id="valueCpkLoLim2" maxWidth="90.0" />
+                                 </children>
+                              </StackPane>
+                              <Label text="Anzahl an Klassen für Häufigkeit:" GridPane.rowIndex="14" />
+                              <StackPane fx:id="spAnzahlSpcKlassen" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                                 <children>
+                                    <TextField fx:id="valueAnzahlSpcKlassen" maxWidth="90.0" />
+                                 </children>
+                              </StackPane>
+                              <Label text="Diagrammeinstellungen" underline="true" GridPane.rowIndex="16" />
+                              <Label text="Mittelwert Stück:" GridPane.rowIndex="17" />
+                              <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="17">
+                                 <children>
+                                    <StackPane fx:id="spAnzahlAvg">
+                                       <children>
+                                          <TextField fx:id="valueAnzahlAvg" maxWidth="90.0" />
+                                       </children>
+                                    </StackPane>
+                                    <Label text="[Stk.]" />
+                                 </children>
+                              </HBox>
+                              <TextField fx:id="valueUnit" maxWidth="110.0" prefHeight="25.0" prefWidth="110.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextField fx:id="valuePlc" maxWidth="260.0" prefHeight="25.0" prefWidth="260.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <TextField fx:id="valueDecpoints" maxWidth="50.0" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="180.0" prefWidth="180.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="260.0" prefWidth="260.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <AnchorPane>
+               <children>
+                  <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handleClose" prefWidth="125.0" text="Abbrechen" />
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="lblFoundDatasets" text="x Datensätze vorhanden" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

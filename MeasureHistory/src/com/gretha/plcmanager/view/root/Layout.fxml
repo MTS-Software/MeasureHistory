@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="790.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gretha.plcmanager.view.root.LayoutController">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="Datei">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#handleRestart" text="Neustart">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/restart_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMinimize" text="Minimieren">
+                     <graphic>
+                        <ImageView fx:id="ivBeenden1" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../shared/resource/icons/minimize_24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" onAction="#handleExit" text="Beenden">
+							<graphic>
+								<ImageView fx:id="ivBeenden" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/shutdown_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Benutzer">
+					<items>
+						<MenuItem fx:id="miLogin" mnemonicParsing="false" onAction="#handleLogin" text="Login">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/login_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem fx:id="miLogout" mnemonicParsing="false" onAction="#handleLogout" text="Logout">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/logout_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+					</items>
+				</Menu>
+				<Menu fx:id="mBearbeiten" mnemonicParsing="false" text="Bearbeiten">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#handleSettings" text="Einstellungen">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/settings_256.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+					</items>
+				</Menu>
+            <Menu fx:id="mBearbeiten1" mnemonicParsing="false" text="Extras">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openJavaWebbrowser" text="Java Webbrowser">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../shared/resource/icons/webbrowser24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="miLicenceGenerator" mnemonicParsing="false" onAction="#handleLicenseGenerator" text="Lizenz Generator">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../shared/resource/icons/license_24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+				<Menu mnemonicParsing="false" text="Hilfe">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#handleLicenseInfo" text="Lizenz">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/license_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem mnemonicParsing="false" onAction="#handleAbout" text="Info">
+							<graphic>
+								<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../shared/resource/icons/info_24.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<bottom>
+		<VBox BorderPane.alignment="CENTER">
+			<children>
+				<Separator />
+				<BorderPane maxHeight="20.0" minHeight="20.0" prefHeight="20.0">
+					<left>
+						<Label fx:id="labelLeftStatus" maxWidth="-1.0" text="Left status" BorderPane.alignment="CENTER">
+							<font>
+								<Font size="11.0" fx:id="x3" />
+							</font>
+						</Label>
+					</left>
+					<right>
+						<Label fx:id="labelRightStatus" maxWidth="-1.0" text="Right status" BorderPane.alignment="CENTER">
+							<font>
+								<Font size="11.0" fx:id="x4" />
+							</font>
+						</Label>
+					</right>
+					<padding>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</padding>
+					<center>
+						<Label fx:id="labelCenterStatus" text="Center status" textAlignment="CENTER" textFill="GREY" BorderPane.alignment="CENTER" />
+					</center>
+				</BorderPane>
+			</children>
+		</VBox>
+	</bottom>
+</BorderPane>

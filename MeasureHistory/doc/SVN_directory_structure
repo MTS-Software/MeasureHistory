@@ -1,0 +1,5 @@
+'trunk' is where you keep your ever developing code base.
+
+'tags' is used for the same purpose that you've indicated. i.e. for versioning.
+
+'branches' is used for things like feature developments/individual development.
